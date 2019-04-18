@@ -58,6 +58,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 </li>
                                 <li class="tab col m2"><a href="#test2">Ongoing Order</a>
                                 </li>
+                                <li class="tab col m2"><a href="#test6">Cancelled Payments</a>
+                                </li>
                                 <li class="tab col m2"><a href="#test3">Failed Orders</a>
                                 </li>
                                 <li class="tab col m2"><a href="#test4">Repalced products</a>
@@ -276,6 +278,52 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     </tr>
                                                     </thead>
                                                     <tbody data-key="table_all">
+                                                    </tbody>
+                                                    <tfoot>
+                                                    <tr>
+                                                        <th>Order ID</th>
+                                                        <th>UIN</th>
+                                                        <th>Time</th>
+                                                        <th>Type</th>
+                                                        <th>Count</th>
+                                                        <th>Price</th>
+                                                        <th>Chat</th>
+                                                    </tr>
+                                                    </tfoot>
+                                                </table>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="test6" class="col s12">
+                                    <!-- Cancelled Payments -->
+                                    <!-- DataTables example -->
+                                    <div class="row">
+                                        <div class="col s12 m12 l12">
+                                        <div id="button-trigger3" class="card card card-default scrollspy">
+                                            <div class="card-content">
+                                            <h4 class="card-title">Cancelled Payments</h4>
+                                            <div class="row">
+                                                <div class="col s12">
+                                                <p>Cancelled Payments</p>
+                                                </div>
+                                                <div class="col s12">
+                                                <table id="data-table-simple1" class="display">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>Order ID</th>
+                                                        <th>UIN</th>
+                                                        <th>Time</th>
+                                                        <th>Type</th>
+                                                        <th>Count</th>
+                                                        <th>Price</th>
+                                                        <th>Chat</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody data-key="table_canceled">
                                                     </tbody>
                                                     <tfoot>
                                                     <tr>

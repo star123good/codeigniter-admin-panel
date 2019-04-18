@@ -124,7 +124,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
  <!-- Borderless Table -->
- <div class="row">
+ <!-- <div class="row">
     <div class="col s12">
       <div id="borderless-table" class="card card-tabs">
         <div class="card-content">
@@ -157,5 +157,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	  </div>
 	</div>
-</div>
+</div> -->
 

@@ -24,10 +24,11 @@
 
     // auto loading 
     auto_load(load_url, function(data){
-      // console.log(data);
+      console.log(data);
       total_count = data.length;
       data_paid = [];
       data_ongoing = [];
+      data_canceled = [];
       data_failed = [];
       data_replaced = [];
       data_all = [];
@@ -38,7 +39,8 @@
         temp['count'] = 0;
         for(var j = temp_array.length - 1; j >= 0; j--) if(temp_array[j] != '') temp['count']++;
         if(temp['success'] == 'Y') data_paid.push(temp);
-        if(temp['success'] == 'N' && temp['ongoing'] == 'Y') data_ongoing.push(temp);
+        if(temp['success'] == 'N' && temp['ongoing'] == 'Y' && temp['canceled'] == 'N') data_ongoing.push(temp);
+        if(temp['ongoing'] == 'Y' && temp['canceled'] == 'Y') data_canceled.push(temp);
         if(temp['success'] == 'N' && temp['ongoing'] == 'N') data_failed.push(temp);
         if(temp['success'] == 'Y' && temp['success'] == 'N') data_replaced.push(temp);
         data_all.push(temp);
@@ -67,6 +69,14 @@
         temp_html += '<tr><td>'+data_ongoing[i]['id']+'</td><td>'+data_ongoing[i]['uin']+'</td><td>'+data_ongoing[i]['time']+'</td><td>'+data_ongoing[i]['product_type']+'</td><td>'+data_ongoing[i]['count']+'</td><td>'+data_ongoing[i]['gbp']+'</td><td><a href="'+temp_url+'/chat/'+data_ongoing[i]['uin']+'"><i class="material-icons dp48">chat_bubble</i></a></td></tr>';
       }
       $('[data-key="table_ongoing"]').html(temp_html);
+
+      // table canceled
+      temp_html = '';
+      total_count = data_canceled.length;
+      for(var i = 0; i < total_count; i++){
+        temp_html += '<tr><td>'+data_canceled[i]['id']+'</td><td>'+data_canceled[i]['uin']+'</td><td>'+data_canceled[i]['time']+'</td><td>'+data_canceled[i]['product_type']+'</td><td>'+data_canceled[i]['count']+'</td><td>'+data_canceled[i]['gbp']+'</td><td><a href="'+temp_url+'/chat/'+data_canceled[i]['uin']+'"><i class="material-icons dp48">chat_bubble</i></a></td></tr>';
+      }
+      $('[data-key="table_canceled"]').html(temp_html);
 
       // table failed
       temp_html = '';

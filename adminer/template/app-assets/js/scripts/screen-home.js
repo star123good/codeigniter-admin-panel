@@ -28,13 +28,13 @@
       $('[data-key="total_money"]').text(data['pp']['sold_money']+data['fullz']['sold_money']+data['dead_fullz']['sold_money']);
 
       // input the value of table data-key="unfinished_table"
-      temp_html = '';
-      temp_count = data['unfinished'].length;
-      for(var i = 0; i < temp_count; i++){
-        temp_html += '<tr><td>'+data['unfinished'][i]['uin']+'</td><td>'+data['unfinished'][i]['time']+'</td><td>'+data['unfinished'][i]['product_type']+'</td><td>'+data['unfinished'][i]['gbp']+'</td></tr>';
-      }
-      $('[data-key="unfinished_table"]').html(temp_html);
-      if(data['unfinished_counts'] > 0) $('[data-key="unfinished_detail"]').text('There are '+data['unfinished_counts']+' unfinished payment(s) now.');
+      // temp_html = '';
+      // temp_count = data['unfinished'].length;
+      // for(var i = 0; i < temp_count; i++){
+      //   temp_html += '<tr><td>'+data['unfinished'][i]['uin']+'</td><td>'+data['unfinished'][i]['time']+'</td><td>'+data['unfinished'][i]['product_type']+'</td><td>'+data['unfinished'][i]['gbp']+'</td></tr>';
+      // }
+      // $('[data-key="unfinished_table"]').html(temp_html);
+      // if(data['unfinished_counts'] > 0) $('[data-key="unfinished_detail"]').text('There are '+data['unfinished_counts']+' unfinished payment(s) now.');
 
       //Get the context of the Chart canvas element we want to select
     var ctx = $("#line-chart");
